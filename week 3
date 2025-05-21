@@ -1,1 +1,38 @@
+# Base class
+class Vehicle:
+    def __init__(self, name, speed):
+        self.name = name
+        self.speed = speed
+
+    def move(self):
+        print(f"{self.name} is moving at {self.speed} km/h.")
+
+# Subclass: Car
+class Car(Vehicle):
+    def move(self):
+        print(f"{self.name} is driving on the road 🚗 at {self.speed} km/h.")
+
+# Subclass: Plane
+class Plane(Vehicle):
+    def move(self):
+        print(f"{self.name} is flying in the sky ✈️ at {self.speed} km/h.")
+
+# Subclass: Boat
+class Boat(Vehicle):
+    def move(self):
+        print(f"{self.name} is sailing on water 🚢 at {self.speed} km/h.")
+
+# Demonstration of polymorphism
+def travel(vehicle):
+    vehicle.move()
+
+# Create different vehicle objects
+car = Car("Toyota", 120)
+plane = Plane("Boeing 747", 900)
+boat = Boat("Sailor", 40)
+
+# Use the same function to invoke different behaviors
+travel(car)
+travel(plane)
+travel(boat)
 
